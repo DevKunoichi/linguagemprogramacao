@@ -45,8 +45,8 @@ button:hover {
     list-style: none;
     padding: 0;
 }
-.sidebar ul li{
-    /* 5px acima e abaixo e 0px à direita e esquerda */
+.sidebar ul li {
+    /* 20px acima e abaixo e 0px à direita e esquerda */
     margin: 10px 0;
 }
 .sidebar ul li a{
