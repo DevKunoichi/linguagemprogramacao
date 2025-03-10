@@ -60,7 +60,7 @@ function exe7() {
     let pesoAumentado = peso * 1.15
     let pesoReduzido = peso * 0.80
     document.getElementById("pesoAumentado").innerText = "Peso com aumento de 15% igual a: " + pesoAumentado + " kg"
-    document.getElementById("pesoReduzido").innerText = "Peso com aumento de 15% igual a: " + pesoReduzido + " kg"
+    document.getElementById("pesoReduzido").innerText = "Peso com redução de 20% igual a: " + pesoReduzido + " kg"
 }
 //exercício8
 function exe8() {

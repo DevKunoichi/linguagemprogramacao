@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #dccff4;
+    background-color: #dacff4;
 /* usa modelo FlexBox, conceito de caixa para posicionamento */
     display: flex;
     align-items: center; /* centraliza verticalmente*/
@@ -15,7 +15,7 @@ body {
     text-align: center;
 }
 button {
-    background: #007bff;
+    background: #0026ff;
     color: white;
     border: none;
     padding: 10px 15px; /* 10px é superior e inferior e 15px é esquerda e direita */
@@ -23,7 +23,7 @@ button {
     cursor: pointer; /* ponteiro do mouse */
 }
 button:hover {
-    background-color: #f3a4b8;
+    background-color: #a4a5f3;
 }
 
 .image {
