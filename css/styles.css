@@ -25,6 +25,7 @@ button {
 button:hover {
     background-color: #f3a4b8;
 }
+
 .image {
     border-radius: 50%; /* cantos arredondados de 50% */
     width: 100px; /* largura da imagem */
