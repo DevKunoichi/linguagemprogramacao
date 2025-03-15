@@ -1,5 +1,5 @@
 function seguir() {
-    alert(`Você agora está seguindo Daniel Pires`)
+    alert(`Você agora está seguindo DevKunoichi.`)
 }
 // exercicio1
 function exe1() {
