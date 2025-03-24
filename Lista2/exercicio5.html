@@ -12,7 +12,7 @@
     </head>
     <body>
         <div class="sidebar">
-            <h2> Lista 1 de JS </h2>
+            <h2> Lista 2 de JS </h2>
             <ul> <!-- lista não ordenada -->
                 <li> <a href="index.html"> Home </a> </li>
                 <li> <a href="exercicio1.html"> Exercício 1 </a> </li>
@@ -31,10 +31,19 @@
             <div class="card">
                 <h1> Exercício 5 </h1>
                 <form>
-                    <label> Preço do produto em R$: </label>
-                    <input type="number" id="preco"/>
-                    <button onclick="exe5()" type="button"> Calcular Desconto 10% </button>
-                    <label id="novoPreco"> O novo preço do produto é R$: </label>
+                    <label> Número 1: </label>
+                    <input type="number" id="nro1"/>
+                    <label> Número 2: </label>
+                    <input type="number" id="nro2"/>
+                    <label> Escolha a opção: </label>
+                    <select id = "selecao">
+                        <option value="1"> Média dos números </option>
+                        <option value="2"> Diferença dos números </option>
+                        <option value="3"> Produto dos números </option>
+                        <option value="4"> Divisão dos números </option>
+                    </select>
+                    <button onclick="exe5()" type="button"> Calcular </button>
+                    <label id = "resultado"> O resultado é: </label>
                 </form>
             </div>
         </div>
