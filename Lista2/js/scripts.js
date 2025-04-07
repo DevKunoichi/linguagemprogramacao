@@ -195,4 +195,109 @@ function exe10() {
         "\nImpostos: R$ " + impostos.toFixed(2) + 
         "\nPreço ao consumidor: R$ " + precoConsumidor.toFixed(2)
 }
+//exercicio22
+function exe22() {
+    let idade = Number(document.getElementById("idade").value)
+    let peso = Number(document.getElementById("peso").value)
+    let risco
+    if (idade >= 0 && idade < 20){
+        if (peso >= 0 && peso < 60){
+            risco = 9
+        }
+        else if (peso > 60 && peso <= 90){
+            risco = 8
+        }
+        else if (peso > 90){
+            risco = 7
+        }
+        else risco = "peso inválido"
+    }
+    else if (idade >= 20 && idade <= 50){
+        if (peso >= 0 && peso < 60){
+            risco = 6
+        }
+        else if (peso > 60 && peso <= 90){
+            risco = 5
+        }
+        else if (peso > 90){
+            risco = 4
+        }
+        else risco = "peso inválido"
+    }
+    else if (idade > 50){
+        if (peso >= 0 && peso < 60){
+            risco = 3
+        }
+        else if (peso > 60 && peso <= 90){
+            risco = 2
+        }
+        else if (peso > 90){
+            risco = 1
+        }
+        else risco = "peso inválido"
+    }
+    else {
+        risco = "idade inválida"
+    }
+    document.getElementById("resultado").innerText = risco
+}
+//exercicio24
+function exe24() {
+    let preco = Number(document.getElementById("preco").value)
+    let categoria = Number(document.getElementById("categoria").value)
+    let situacao = Number(document.getElementById("situacao").value)
+    if (preco < 0){
+        document.getElementById("resultado").innerText = "Preço inválido"
+    }
+    else {
+        // calcula aumento
+        let aumento
+        switch(categoria){
+            case 1: if (preco <= 25){
+                        aumento = preco * 5/100
+                    }
+                    else {
+                        aumento = preco * 12/100
+                    }
+                    break
+            case 2: if (preco <= 25){
+                        aumento = preco * 8/100
+                    }
+                    else {
+                        aumento = preco * 15/100
+                    }
+                    break
+            case 3: if (preco <= 25){
+                        aumento = preco * 10/100
+                    }
+                    else {
+                        aumento = preco * 18/100
+                    }
+                    break
+        }
+        // calcula imposto
+        let imposto
+        if (categoria == 2 || situacao == 'R'){
+            imposto = preco * 5/100
+        }
+        else {
+            imposto = preco * 8/100
+        }
+        // calcula novo preço
+        let novoPreco = preco + aumento + imposto
+        // calcula classificação
+        let classificacao
+        if (novoPreco < 50){
+            classificacao = "Barato"
+        }
+        else if (novoPreco >= 50 && novoPreco < 120){
+                classificacao = "Normal"
+        }
+        else {
+            classificacao = "Caro"
+        }
+        // resultado
+        document.getElementById("resultado").innerText = `Aumento ${aumento} Imposto ${imposto} Novo preço ${novoPreco} e Classificação ${classificacao}`
+    }
+}
 
