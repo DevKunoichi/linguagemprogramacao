@@ -83,11 +83,12 @@ function exe4() {
 //exercício5
 function exe5() {
     let resultado = ""
-    for(let numero = 1; 1 <= 10; i++){
+    for(let numero = 1; numero <= 10; numero++){
         resultado += `Tabuada do ${numero} <br/>`
-        for(i = 0; i <= 10; i++){
-            resultado += `${numero} * ${i} = ${numero * 1} <br/>`
+        for(let i = 0; i <= 10; i++){
+            resultado += `${numero} x ${i} = ${numero * 1} <br/>`
         }
+        resultado += "<br/>"
     }
     document.getElementById("resultado2").innerHTML = resultado
 }
