@@ -39,35 +39,58 @@ function exe2() {
 }
 //exercício3
 function exe3() {
-    // Obtendo e convertendo as idades para números
-    const idades = Array.from({ length: 8 }, (_, i) => 
-        parseInt(document.getElementById(`idade${i + 1}`).value) || 0
-    )
-
-    // Contadores para as faixas etárias
-    let faixa1 = 0, faixa2 = 0, faixa3 = 0, faixa4 = 0, faixa5 = 0
-
-    // Contando as idades nas faixas etárias
-    idades.forEach(idade => {
-        if (idade <= 15) faixa1++
-        else if (idade <= 30) faixa2++
-        else if (idade <= 45) faixa3++
-        else if (idade <= 60) faixa4++
-        else faixa5++
-    })
-
-    // Calculando porcentagens
-    const porcentagemFaixa1 = ((faixa1 / idades.length) * 100).toFixed(2)
-    const porcentagemFaixa5 = ((faixa5 / idades.length) * 100).toFixed(2)
-
-    // Exibindo os resultados
-    document.getElementById("resultado").innerHTML = `
-        Faixa 1 (até 15 anos): ${faixa1} pessoas<br>
-        Faixa 2 (16 a 30 anos): ${faixa2} pessoas<br>
-        Faixa 3 (31 a 45 anos): ${faixa3} pessoas<br>
-        Faixa 4 (46 a 60 anos): ${faixa4} pessoas<br>
-        Faixa 5 (acima de 60 anos): ${faixa5} pessoas<br>
-        Porcentagem da Faixa 1: ${porcentagemFaixa1}%<br>
-        Porcentagem da Faixa 5: ${porcentagemFaixa5}%
-    `
+    let faixa1 = 0, faixa2 = 2, faixa3 = 0, faixa4 = 0, faixa5 = 0
+    let idade 
+    // estrutura de repetição for
+    // let i = 1 variável que conta quantas vezes o laço vai se repetir
+    // i <= 8 será executado toda vez e antes de entrar no loop
+    // i++ será executado antes de ir para a próxima iteração
+    for (let i = 1; i <= 8; i++) {
+        idade = Number(prompt(`Informe a idade ${i}`))
+        if (idade >= 0 && idade <= 15){
+            faixa1++
+        }
+        else if (idade > 15 && idade <= 30){
+            faixa2++
+        }
+        else if (idade > 30 && idade <= 45){
+            faixa3++
+        } 
+        else if (idade > 45 && idade <= 60){
+            faixa4++        
+        } 
+        else if (idade > 60){
+            faixa5++
+        }
+        else {
+            alert(`Idade negativa`)
+        }
+    }
+     document.getElementById("resultado").innerHTML = 
+     `F1: ${faixa1} <br/>F2: ${faixa2} <br/>F3: ${faixa3} <br/>F4: ${faixa4} <br/>F5: ${faixa5} <br/> %F1: ${faixa1/0.08}% <br/> %F5: ${faixa5/0.08}%` 
 }
+//exercício4
+function exe4() {
+    // recupera o número fornecido pelo usuário
+    let numero = Number(document.getElementById("numero").value)
+    let resultado = ""
+    // estrutura de repetição 'for' para calcular a tabuada do número
+    for(let i = 0; i <= 10; i++){
+        resultado += `${numero} x ${i} = ${numero * i} <br/>`
+    } 
+    document.getElementById("resultado1").innerHTML = resultado
+}
+//exercício5
+function exe5() {
+    let resultado = ""
+    for(let numero = 1; 1 <= 10; i++){
+        resultado += `Tabuada do ${numero} <br/>`
+        for(i = 0; i <= 10; i++){
+            resultado += `${numero} * ${i} = ${numero * 1} <br/>`
+        }
+    }
+    document.getElementById("resultado2").innerHTML = resultado
+}
+   
+    
+
