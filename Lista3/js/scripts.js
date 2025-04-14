@@ -92,6 +92,7 @@ function exe5() {
     }
     document.getElementById("resultado2").innerHTML = resultado
 }
+
    
     
 
