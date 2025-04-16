@@ -113,7 +113,7 @@ function exe6() {
 //exercício7
 function exe7() {
     let idade, altura, peso, idade50 = 0, idade10e20 = 0, somaAltura = 0, peso40 = 0
-    for(let i = 1; i<= 5; i++){
+    for(let i = 1; i<= 3; i++){
         do {
             idade = Number(prompt(`Informe a idade`))
         }
@@ -129,9 +129,12 @@ function exe7() {
         }
         if (peso < 40){ //item 3
             peso40++
-        }
+        }   
     }
-    document.getElementById("resultado").innerHTML = `<br/> Item 1 ${idade50} <br/> Item 2 ${somaAltura/idade10e20} <br/> Item 3 ${peso40}`
+    document.getElementById("resultado").innerHTML = `
+    <br/> Item 1 ${idade50} 
+    <br/> Item 2 ${idade10e20 > 0 ? (somaAltura / idade10e20).toFixed(2) : "n/a"} 
+    <br/> Item 3 ${peso40}`
 }
 //exercício8
 function exe8() {
@@ -142,13 +145,13 @@ function exe8() {
     //entrada e processamento de dados
     for(let i = 1; i <= 3; i++){
         idade = Number(prompt(`Informe a idade ${i}`))
-        altura = Number(prompt(`Informe peso`))
+        altura = Number(prompt(`Informe o peso`))
         do {
-            cabelos = prompt(`Informe cor dos cabelos`).toUpperCase()
+            cabelos = prompt(`Informe a cor dos cabelos`).toUpperCase()
         }
         while (cabelos != 'P' && cabelos != 'C' && cabelos != 'L' && cabelos != 'R')
         do {
-            olhos = prompt(`Informe cor dos olhos`).toUpperCase()
+            olhos = prompt(`Informe a cor dos olhos`).toUpperCase()
         }
         while (olhos != 'A' && olhos != 'P' && olhos != 'V' && olhos != 'C')
         //processamento
@@ -166,8 +169,88 @@ function exe8() {
             qtdeRuivo++
         }
     }
-    document.getElementById("resultado").innerHTML = `Item 1 ${idade50Peso60} Item 2 ${soma/qtdeAltura150} Item 3 ${qtdeAzuis} Item 4 ${qtdeRuivo}`
+    document.getElementById("resultado").innerHTML = `
+        Item 1: ${idade50Peso60} pessoa(s) com mais de 50 anos e menos de 60kg <br/>
+        Item 2: Média das idades (altura < 1.50): ${qtdeAltura150 > 0 ? (somaIdade / qtdeAltura150).toFixed(2) : "n/a"} <br/>
+        Item 3: ${qtdeAzuis} pessoa(s) com olhos azuis <br/>
+        Item 4: ${qtdeRuivo} ruivo(s) sem olhos azuis `
 }
+//exercício9
+function exe9() {
+    let idade, altura, peso
+    let somaIdade = 0
+    let qtdePeso90Altura150 = 0
+    let qtdeAlturaMaior190 = 0
+    let qtdeIdade1030Altura190 = 0
+
+    for (let i = 1; i <= 3; i++) {
+        do {
+            idade = Number(prompt(`Informe a idade da pessoa ${i}:`))
+        } while (idade < 0)
+
+        do {
+            peso = Number(prompt(`Informe o peso da pessoa ${i} (em kg):`))
+        } while (peso <= 0)
+
+        do {
+            altura = Number(prompt(`Informe a altura da pessoa ${i} (em metros):`))
+        } while (altura <= 0)
+
+        somaIdade += idade //somar todas as idades
+
+        if (peso > 90 && altura < 1.50) { //contar pessoas com peso > 90kg e altura < 1.50m
+            qtdePeso90Altura150++
+        }
+
+        if (altura > 1.90) { //contar pessoas com mais de 1.90m e dentro disso, as com idade entre 10 e 30
+            qtdeAlturaMaior190++
+            if (idade >= 10 && idade <= 30) {
+                qtdeIdade1030Altura190++
+            }
+        }
+    }
+    let mediaIdade = somaIdade / 3 //calcular média das idades
+
+    let porcentagem = 0 // calcular porcentagem de pessoas entre 10 e 30 anos entre os que têm altura > 1.90m
+    if (qtdeAlturaMaior190 > 0) {
+        porcentagem = (qtdeIdade1030Altura190 / qtdeAlturaMaior190) * 100
+    }
+    document.getElementById("resultado").innerHTML = `
+        Média das idades: ${mediaIdade.toFixed(2)} anos<br/>
+        Quantidade com peso > 90kg e altura < 1.50m: ${qtdePeso90Altura150}<br/>
+        Porcentagem com idade entre 10 e 30 anos entre os que têm mais de 1.90m: ${porcentagem.toFixed(2)}%
+    `
+}
+//exercício10
+function exe10() {
+    let numero, somaPares = 0, somaPrimos = 0
+
+    for (let i = 1; i <= 3; i++) {
+        numero = Number(prompt(`Digite o ${i}º número:`))
+
+        if (numero % 2 === 0) {
+            somaPares += numero
+        }
+
+        if (ehPrimo(numero)) {
+            somaPrimos += numero
+        }
+    }
+    document.getElementById("resultado").innerHTML = `
+        Soma dos pares: ${somaPares} <br/>
+        Soma dos primos: ${somaPrimos}
+    `
+ }
+    function ehPrimo(n) {
+        if (n < 2) return false
+        for (let i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i === 0) return false
+        }
+        return true
+}
+
+
+
 
 
 
