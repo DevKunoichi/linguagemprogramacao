@@ -117,3 +117,14 @@ function exe5(){
     }
     alert(`Alunos que fazem Lógica e Linguagem ${interseccao}`)
 }
+//exercício6
+function exe6(){
+    let vendas = [], percentuais = [], nomes = []
+    //entrada de dados
+    for(let i=0; i<5; i++){
+        nomes.push(prompt(`Informe o nome do(a) ${i+1}vendedor(a)`))
+        vendas.push(Number(prompt(`Informe total vendido pelo ${i+1}º vendedor`)))
+        percentuais.push(Number(prompt(`Informe percentual de vendas do ${i+1}º vendedor`)))
+
+    }
+}
