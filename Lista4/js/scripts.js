@@ -78,3 +78,42 @@ function exe3(){
     while(cliente != 0)
     alert(`${codigos} ${estoque}`)
 }
+//exercício4
+function exe4(){
+    //declaração do vetor
+    let vetor = []
+    //usuário informa 15 números
+    for(let i=0; i<15; i++){
+        vetor.push(Number(prompt(`Informe o ${i+1}º número `)))
+    }
+    //verifica os números iguais a 30 e mostrar a posição onde estão
+    let posicoes = []
+    for(let i=0; i<15; i++){
+        if(vetor[i] == 30){
+           posicoes.push(i)
+        }
+    }
+    alert(`Número 30 encontrado nas posições ${posicoes}`)
+}
+//exercício5
+function exe5(){
+    let logica = [], linguagem = []
+    //entrada de dados
+    for(let i=0; i<15; i++){
+        logica.push(Number(prompt(`Informe o ${i+1}º que faz a disciplina Lógica`)))
+    }
+    for(let i=0; i<10; i++){
+        linguagem.push(Number(prompt(`Informe o ${i+1}º aluno que faz disciplina Linguagem`)))
+    }
+    //encontrar a intersecção
+    let interseccao = []
+    //percorre o vetor logica
+    for(let i=0; i<15; i++){
+        //percorre o vetor linguagem
+        let posicao = linguagem.indexOf(logica[i])
+        if (posicao != -1){//caso encontrou
+            interseccao.push(logica[i])
+        }
+    }
+    alert(`Alunos que fazem Lógica e Linguagem ${interseccao}`)
+}
