@@ -122,9 +122,56 @@ function exe6(){
     let vendas = [], percentuais = [], nomes = []
     //entrada de dados
     for(let i=0; i<5; i++){
-        nomes.push(prompt(`Informe o nome do(a) ${i+1}vendedor(a)`))
+        nomes.push(prompt(`Informe o nome do ${i+1}º vendedor`))
         vendas.push(Number(prompt(`Informe total vendido pelo ${i+1}º vendedor`)))
         percentuais.push(Number(prompt(`Informe percentual de vendas do ${i+1}º vendedor`)))
-
+        //calcula a comissão
+        comissao.push((vendas[i] * percentuais[i]) / 100)
     }
+    //relação dos vendedores e os valores a receber
+    let relatorio = ''
+    for(let i=0; i<5; i++){
+        relatorio += `Vendedor: ${nomes[i]} vai receber ${comissao[i]}`
+    }
+    alert(relatorio)
+    //total das vendas de todos os vendedores
+    let somaVendas = 0
+    for(let i=0; i<5; i++){
+        somaVendas = somaVendas + vendas [i]
+    }
+    alert(`Total de vendas ${somaVendas.toFixed(2)}`)
+    //calcula o maior e menor valor de comissão
+    let maior = comissao[0]//primeiro é o maior
+    let menor = comissao[0]//primeiro é o menor
+    for(let i=0; i<5; i++){
+        if (comissao[i] > maior){
+            maior = comissao[i]
+        }
+        if (comissao[i] < menor){
+            menor = comissao[i]
+    }
+}
+let indiceMaior = comissao.indexOf(maior)//posição do maior na comissão
+alert(`${nomes[indiceMaior]} vai receber maior comissão de ${maior}`)
+let indiceMenor = comissao.indexOf(menor)//posição do menor na comissão
+alert(`${nomes[indiceMenor]} vai receber menor comissão de ${menor}`)
+}
+//exercício7
+function exe7(){
+    let vetor = []
+    for(let i=0; i<5; i++){
+        vetor.push(Number(prompt(`Informe o número ${i}º`)))
+    }
+    //conta os negativos e soma os positivos
+    let conta = 0
+    let soma = 0
+    for(let i=0; i<5; i++){
+        if(vetor[i] < 0){
+            conta++
+        }
+        else{
+            soma += vetor[i]
+        }
+    }
+    alert(`Contagem de negativos ${conta} e soma dos positivos ${soma}`)
 }
