@@ -74,7 +74,7 @@ function exe9() {
     let area = lado * lado
     document.getElementById("area").innerText = "A área do quadrado é: " + area + " metros quadrados."
 }
-//exercício10
+exercício10
 function exe10() {
     let baseMaior = Number(document.getElementById("baseMaior").value)
     let baseMenor = Number(document.getElementById("baseMenor").value)
@@ -82,4 +82,3 @@ function exe10() {
     let area = ((baseMaior + baseMenor) * altura) / 2
     document.getElementById("area").innerText = "A área do trapézio é: " + area + " unidades quadradas."
 }
-    
