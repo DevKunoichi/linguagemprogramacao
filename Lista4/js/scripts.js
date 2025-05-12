@@ -175,3 +175,72 @@ function exe7(){
     }
     alert(`Contagem de negativos ${conta} e soma dos positivos ${soma}`)
 }
+//exercício8
+function exe8(){
+    let nomes = [], medias = []
+    //entrada de dados dos 7 alunos
+    for (let i = 0; i < 7; i++) {
+        nomes.push(prompt(`Informe o nome do ${i + 1}º aluno:`))
+        medias.push(Number(prompt(`Informe a média final de ${nomes[i]}:`)))
+    }
+    //encontrar o aluno com maior média (sem empates)
+    let maior = medias[0]
+    let indiceMaior = 0
+    for (let i = 1; i < 7; i++) {
+        if (medias[i] > maior) {
+            maior = medias[i]
+            indiceMaior = i
+        }
+    }
+    alert(`Aluno com maior média: ${nomes[indiceMaior]} (${maior.toFixed(2)})`)
+    //verificar alunos com média < 7 e calcular nota necessária no exame final
+    let relatorioExame = ""
+    for (let i = 0; i < 7; i++) {
+        if (medias[i] < 7) {
+            //considerando: (média + exameFinal) / 2 >= 5
+            let exameFinal = (5 * 2) - medias[i]
+            relatorioExame += `${nomes[i]} precisa tirar ${exameFinal.toFixed(2)} no exame final.\n`
+        }
+    }
+    if (relatorioExame === "") {
+        alert("Todos os alunos foram aprovados com média maior ou igual a 7.")
+    } else {
+        alert("Alunos que precisam de exame final:\n" + relatorioExame)
+    }
+}
+//exercício9
+function exe9(){
+    let nomes = [], codigos = [], precos = [], novosPrecos = []
+    //entrada de dados
+    for (let i = 0; i < 5; i++) {
+        nomes.push(prompt(`Informe o nome do ${i + 1}º produto:`))
+        codigos.push(Number(prompt(`Informe o código do ${i + 1}º produto:`)))
+        precos.push(Number(prompt(`Informe o preço do ${i + 1}º produto:`)))
+    }
+    let relatorio = ""
+    for (let i = 0; i < 5; i++) {
+        let codigoPar = codigos[i] % 2 === 0
+        let precoMaiorQueMil = precos[i] > 1000
+        let novoPreco = precos[i]
+        
+        if (codigoPar && precoMaiorQueMil) {
+            novoPreco *= 1.20 //aumento de 20%
+        } else if (codigoPar) {
+            novoPreco *= 1.15 //aumento de 15%
+        } else if (precoMaiorQueMil) {
+            novoPreco *= 1.10 //aumento de 10%
+        }
+        //se houve aumento guardar no relatório
+        if (novoPreco !== precos[i]) {
+            novosPrecos.push(novoPreco)
+            relatorio += `Produto: ${nomes[i]}, Código: ${codigos[i]}, Preço original: R$ ${precos[i].toFixed(2)}, Novo preço: R$ ${novoPreco.toFixed(2)}\n`
+        }
+    }
+    if (relatorio === "") {
+        alert("Nenhum produto sofreu aumento.")
+    } else {
+        alert("Relatório de produtos com aumento:\n" + relatorio)
+    }
+}
+
+    
