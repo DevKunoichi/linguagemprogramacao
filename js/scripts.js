@@ -9,26 +9,26 @@ function exe1() {
     let nro1 = Number (document.getElementById("nro1").value)
     let nro2 = Number (document.getElementById("nro2").value)
     // vamos fazer a subtração 
-    let sub = nro1 - nro2
+    let subtracao = nro1 - nro2
     // vamos mostrar o resultado ao usuário
     // alert("A subtração é "+ sub)
-    document.getElementById("sub").innerText = "O resultado é: " + sub
+    document.getElementById("subtracao").innerText = "O resultado é: " + subtracao
 }
 //exercício2
 function exe2() {
     let nro1 = Number(document.getElementById("nro1").value)
     let nro2 = Number(document.getElementById("nro2").value)
     let nro3 = Number(document.getElementById("nro3").value)
-    let mult = nro1 * nro2 * nro3
-    document.getElementById("mult").innerText = "O resultado é: " + mult
+    let multiplicacao = nro1 * nro2 * nro3
+    document.getElementById("multiplicacao").innerText = "O resultado é: " + multiplicacao
 }
 //exercício3
 function exe3() {
     let nro1 = Number(document.getElementById("nro1").value)
     let nro2 = Number(document.getElementById("nro2").value)
-    let div = nro1 / nro2
+    let divisao = nro1 / nro2
     if(nro2!==0)
-    document.getElementById("div").innerText = "O resultado é: " + div
+    document.getElementById("divisao").innerText = "O resultado é: " + divisao
 } 
 //exercício4
 function exe4() {
@@ -36,6 +36,7 @@ function exe4() {
     let nota2 = Number(document.getElementById("nota2").value)
     let peso1 = 2
     let peso2 = 3
+    //média ponderada
     let media = (nota1 * peso1 + nota2 * peso2) / (peso1 + peso2)
     document.getElementById("media").innerText = "A média ponderada é: " + media.toFixed(2)
 }
@@ -82,3 +83,4 @@ function exe10() {
     let area = ((baseMaior + baseMenor) * altura) / 2
     document.getElementById("area").innerText = "A área do trapézio é: " + area + " unidades quadradas."
 }
+
