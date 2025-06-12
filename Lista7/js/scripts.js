@@ -63,3 +63,4 @@ function exe1(){
     exibeMatriz(mat)
 }
 exe1()
+
