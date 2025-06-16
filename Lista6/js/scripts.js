@@ -45,7 +45,7 @@ function entrada(vet){
     for(let i=0; i<3; i++){
         //cria objeto
         let objeto = {
-            codigo: prompt(`Informe o código do produto`),
+            codigo: prompt(`Informe o código do ${1+i}º produto`),
             estoque: Number(prompt(`Informe a qtde em estoque`)),
             preco: Number(prompt(`Informe o preço do produto`))
         }
@@ -57,7 +57,7 @@ function compra(vet){
         //comprando ...
     let cliente = Number(prompt(`Informe código do cliente`))
     do {
-        let codigo = prompt(`Informe código do produdo para compra`)
+        let codigo = prompt(`Informe código do produto para compra`)
         let qtde = Number(prompt(`Informe a qtde do produto para compra`))
         //procura pra ver se o produto existe
         let produtoEncontrado
@@ -93,26 +93,28 @@ function saida(vet){
 }
 function exe3(){
     //cadastra código e qtde em estoque
-    let vetor = []
-    entrada(vetor)
-    compra(vetor)
-    saida(vetor)
+    let vet = []
+    entrada(vet)
+    compra(vet)
+    saida(vet)
 }
+exe3()
+
 //exercício 6 utilizando 'função'
-function exe6(){
+function entrada(vet){
     //vet recebe vetor (vet = vetor)
     //entrada de dados
     for(let i=0; i<3; i++){
         //cria o objeto
         let obj = {
-            nome: prompt(`Informe nome do ${i+1}o vendedor`),
-            vendas: Number(prompt(`Informe total vendido pelo ${i+1}o vendedor`)),
-            percentual: Number(prompt(`Informe percentual de vendas do ${i+1}o vendedor`))
+            nome: prompt(`Informe nome do ${i+1}º vendedor`),
+            vendas: Number(prompt(`Informe total vendido pelo ${i+1}º vendedor`)),
+            percentual: Number(prompt(`Informe percentual de vendas do ${i+1}º vendedor`))
         }
         //calcula a comissão -> vamos utilizar o . para acessar o campo/atributo do objeto
         obj.comissao = (obj.vendas * obj.percentual) / 100
         //adiciona o objeto no vetor
-        vetor.push(obj)
+        vet.push(obj)
     } //fecha o for
 }
 function gerarRelatorio(vet){
@@ -147,11 +149,11 @@ function menorMaiorComissao(vet){
         alert(`${objMenor.nome} vai receber menor comissão de ${objMenor.comissao}`)
 }
 function exe6(){
-    let vetor = []
-    entrada(vetor)
-    gerarRelatorio(vetor)
-    totalVendas(vetor)
-    menorMaiorComissao(vetor)
+    let vet = []
+    entrada(vet)
+    gerarRelatorio(vet)
+    totalVendas(vet)
+    menorMaiorComissao(vet)
 }
 exe6()
 
