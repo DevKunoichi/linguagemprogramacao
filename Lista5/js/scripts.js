@@ -101,18 +101,18 @@ function exe9(){
     //gerar o relatório com os novos preços
     for(let i=0; i<3; i++){
         if (vetor[i].codigo % 2 == 0 && vetor[i].preco > 1000){
-            vetor[i].novoPreco = vetor[i].preco + vetor[i].preco * 20/100 //aumento de 20%
+            vetor[i].novoPreco = vetor[i].preco + vetor[i].preco * 20/100 
         } 
         else if (vetor[i].codigo % 2 == 0){
-            vetor[i].novoPreco = vetor[i].preco + vetor[i].preco * 15/100 //aumento de 15%
+            vetor[i].novoPreco = vetor[i].preco + vetor[i].preco * 15/100 
         } 
         else if (vetor[i].codigo > 100){
-            vetor[i].novoPreco = vetor[i].preco + vetor[i].preco * 10/100 //aumento de 10%
+            vetor[i].novoPreco = vetor[i].preco + vetor[i].preco * 10/100 
         } 
-        else{
+        else {
             vetor[i].novoPreco = vetor[i].preco
         } 
-        alert(`Produto: ${vetor[i].nome} - Código: ${vetor[i].codigo} - Preço: ${vetor[i].preco} - Novo Preço: ${vetor[i].novoPreco}`)
+        alert(`${vetor[i].nome} - ${vetor[i].codigo} - ${vetor[i].preco} - ${vetor[i].novoPreco}`)
     }     
 }
   
